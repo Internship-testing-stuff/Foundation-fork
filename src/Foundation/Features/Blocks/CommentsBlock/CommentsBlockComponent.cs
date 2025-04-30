@@ -134,7 +134,6 @@ namespace Foundation.Features.Blocks.CommentsBlock
             }
             catch (SocialRepositoryException ex)
             {
-                AddMessage(MessageKey, new MessageViewModel(ex.Message, ErrorMessage));
             }
         }
 
