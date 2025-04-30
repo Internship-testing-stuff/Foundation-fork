@@ -65,7 +65,7 @@ namespace Foundation.Features.Blocks.CommentsBlock
             }
             catch (SocialRepositoryException ex)
             {
-                blockViewModel.Messages.Add(new MessageViewModel(ex.Message, ErrorMessage));
+                Console.WriteLine("An error occurred.");
             }
 
             return await Task.FromResult(View("~/Features/Blocks/CommentsBlock/CommentsBlock.cshtml", blockViewModel));
@@ -115,10 +115,7 @@ namespace Foundation.Features.Blocks.CommentsBlock
                 addedComment = _commentRepository.Add(newComment);
                 AddMessage(MessageKey, new MessageViewModel(SubmitSuccessMessage, SuccessMessage));
             }
-            catch (SocialRepositoryException ex)
-            {
-                AddMessage(MessageKey, new MessageViewModel(ex.Message, ErrorMessage));
-            }
+            catch (Exception) { }
 
             return addedComment;
         }

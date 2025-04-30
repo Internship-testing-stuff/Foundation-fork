@@ -55,6 +55,7 @@ public class CustomFormsRepository : IFormsRepository
     {
         IDictionary<string, object> submittedData1 = submittedData;
         IDictionary<string, object> submittedData2 = submittedData;
+        IDictionary<string, object> submittedData3 = submittedData;
         return _instance.GetConnectorMappedData(submittedFieldMappingTable, submittedData1);
     }
 
